@@ -65,6 +65,7 @@ export const Hero = () => {
       <Image
         src={homeHeroPic}
         alt="Picture of the author"
+        placeholder="blur"
         fill
         style={{ objectFit: "cover" }}
       />
