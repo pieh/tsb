@@ -48,7 +48,7 @@ export const Hero = () => {
     <div className="w-full pb-40 relative bg-black text-white flex justify-center">
       <div className="flex flex-col w-7/12 z-10">
         <Navbar />
-        <h1 className="text-[70px] leading-[5.5rem] font-bold w-3/4">
+        <h1 className="text-7xl leading-[5.5rem] font-bold w-3/4">
           Our {"'"}old school{"'"} way of keeping you up to date on our
           whereabouts
         </h1>
@@ -72,3 +72,4 @@ export const Hero = () => {
     </div>
   );
 };
+

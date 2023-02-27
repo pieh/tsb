@@ -1,11 +1,4 @@
-import { Crimson_Pro } from "next/font/google";
-
-// If loading a variable font, you don't need to specify the font weight
-const crimsonPro = Crimson_Pro({
-  subsets: ["latin"],
-  display: "swap",
-});
-
+import { crimsonPro } from "utils/fonts";
 import "./globals.css";
 
 export const metadata = {
