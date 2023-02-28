@@ -4,6 +4,7 @@ import { SmallNotes } from "components/SmallNotes";
 import { CategoriesSection } from "components/CategoriesSection";
 import { AboutUsSection } from "components/AboutUsSection";
 import { AllBlogPosts } from "components/AllBlogPosts";
+import { Footer } from "components/Footer";
 
 const POSTS = [
   {
@@ -36,11 +37,18 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Hero />
+
       <ThreePostsSection title="Our recent thoughts" posts={POSTS} />
+
       <SmallNotes />
+
       <CategoriesSection />
+
       <AboutUsSection />
+
       <AllBlogPosts />
+
+      <Footer />
     </div>
   );
 }
