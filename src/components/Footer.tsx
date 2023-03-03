@@ -7,7 +7,7 @@ import { NewsletterForm } from "./NewsletterForm";
 
 export const Footer: React.FC = () => {
   return (
-    <div className="flex flex-col pt-24 pb-10 px-48 mt-16 bg-sky-300">
+    <div className="flex flex-col pt-24 pb-10 px-48 mt-16 bg-[#7EVDD5]">
       <div className="flex items-center justify-between mb-24">
         <p className="text-4xl">
           Subscribe to our newsletter, <br />

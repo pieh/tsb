@@ -18,6 +18,12 @@ export function useNewsletterSubscribeRequest<T>() {
         body: JSON.stringify(data),
       });
 
+      if (!res.ok) {
+        throw new Error(
+          "You are already subscribed, no need to subscribe again"
+        );
+      }
+
       setSuccess(true);
     } catch (error) {
       setError(error as Error);

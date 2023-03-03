@@ -29,7 +29,6 @@ export async function POST(request: Request, res: Response) {
         email_address: data.email,
         merge_fields: {
           FNAME: data?.firstName || undefined,
-          LNAME: data?.lastName || undefined,
         },
         status: "subscribed",
       }

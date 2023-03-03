@@ -23,29 +23,38 @@ export const NewsletterForm: React.FC = ({}) => {
   const { pending, success, error, onSubscribe } =
     useNewsletterSubscribeRequest<FormData>();
 
+  if (success) {
+    return (
+      <div className="h-12 text-black text-xl flex items-center">
+        Thanks for subscribing! Please check your inbox.
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="h-12 text-black text-xl flex items-center">
+        Oops! You are already subscribed, no need to subscribe again :)
+      </div>
+    );
+  }
+
   return (
     <form
-      className={`flex h-16 gap-4 ${poppins.className}`}
+      className={`flex flex-col xl:flex-row gap-4 ${poppins.className}`}
       onSubmit={handleSubmit(onSubscribe)}
     >
       <input
-        className="h-full px-6 w-72"
+        className="px-6 w-full bg-[#7EBDD5] rounded-full border-2 border-white text-white placeholder-current focus:outline-white"
         type="firstName"
-        placeholder="Enter First Name"
-        {...register("firstName", { required: false })}
+        placeholder="First Name"
+        {...register("firstName", { required: true })}
       />
 
       <input
-        className="h-full px-6 w-72"
-        type="lastName"
-        placeholder="Enter Last Name"
-        {...register("lastName", { required: false })}
-      />
-
-      <input
-        className="h-full px-6 w-72"
+        className="px-6 w-full bg-[#7EBDD5] rounded-full border-2 border-white text-white placeholder-current focus:outline-white"
         type="email"
-        placeholder="Enter Email"
+        placeholder="Email"
         {...register("email", {
           required: true,
           pattern: {
@@ -57,10 +66,10 @@ export const NewsletterForm: React.FC = ({}) => {
 
       <button
         type="submit"
-        className="h-full bg-black text-white px-12 ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
-        disabled={!isValid || !isDirty}
+        className="rounded-full px-12 border-2 border-white text-[#7EBDD5] bg-white focus:bg-slate-50 placeholder-current focus:outline-white disabled:cursor-not-allowed disabled:opacity-70"
+        disabled={!isValid || !isDirty || pending}
       >
-        Subscribe Now
+        Send
       </button>
     </form>
   );
