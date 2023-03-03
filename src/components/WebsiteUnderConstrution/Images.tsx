@@ -3,8 +3,8 @@ import overlayImage from "../../../public/images/overlay-image.png";
 
 export const Images = () => {
   return (
-    <div className="absolute xl:-top-20 left-1/2 transform -translate-x-1/2">
-      <div className="relative h-[600px] w-[600px] xl:h-[800px] xl:w-[800px]">
+    <div className="absolute xl:-top-24 left-1/2 xl:left-10 transform -translate-x-1/2 xl:-translate-x-0">
+      <div className="relative h-[900px] w-[900px] xl:h-[650px] xl:w-[700px]">
         <Image
           src={overlayImage}
           alt="collage of 2 images, one is davide, the other is the tip of a floating boat"

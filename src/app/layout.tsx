@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={crimsonPro.className}>
-      <body>{WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}</body>
+      <body className={!WEBSITE_IS_ACTIVE ? "bg-orange-100" : ''}>{WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}</body>
     </html>
   );
 }
