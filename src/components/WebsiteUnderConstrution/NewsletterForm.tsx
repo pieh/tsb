@@ -9,6 +9,8 @@ const EMAIL_REGEX =
 
 type FormData = {
   email: string;
+  firstName?: string;
+  lastName?: string;
 };
 
 export const NewsletterForm: React.FC = ({}) => {
@@ -18,14 +20,28 @@ export const NewsletterForm: React.FC = ({}) => {
     formState: { isValid, isDirty },
   } = useForm<FormData>();
 
-  //   const { pending, success, error, onSubscribe } =
-  const { onSubscribe } = useNewsletterSubscribeRequest<FormData>();
+  const { pending, success, error, onSubscribe } =
+    useNewsletterSubscribeRequest<FormData>();
 
   return (
     <form
-      className={`flex h-16 ${poppins.className}`}
+      className={`flex h-16 gap-4 ${poppins.className}`}
       onSubmit={handleSubmit(onSubscribe)}
     >
+      <input
+        className="h-full px-6 w-72"
+        type="firstName"
+        placeholder="Enter First Name"
+        {...register("firstName", { required: false })}
+      />
+
+      <input
+        className="h-full px-6 w-72"
+        type="lastName"
+        placeholder="Enter Last Name"
+        {...register("lastName", { required: false })}
+      />
+
       <input
         className="h-full px-6 w-72"
         type="email"
