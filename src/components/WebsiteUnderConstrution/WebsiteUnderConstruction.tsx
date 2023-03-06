@@ -26,10 +26,8 @@ export const WebsiteUnderConstruction = () => {
             </h2>
 
             <p className="text-4xl leading-10 xl:text-xl xl:leading-6 mb-16 xl:mb-8">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
-              ad vitae dolorum vel. Commodi aliquam quam nihil assumenda nostrum
-              architecto culpa iure libero error ad vel laboriosam, dolores
-              repellendus nisi.
+              Hello,
+              
             </p>
 
             <NewsletterForm />
