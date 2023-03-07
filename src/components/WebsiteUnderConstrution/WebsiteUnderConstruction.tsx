@@ -26,11 +26,11 @@ export const WebsiteUnderConstruction = () => {
             </h2>
 
             <p className="text-4xl leading-10 xl:text-xl xl:leading-6 mb-16 xl:mb-8">
-              Hello, we've recently started our travels and wanted to keep our
-              family and friends up to date. We are not writers, but if you
+              Hello, we{"'"}ve recently started our travels and wanted to keep
+              our family and friends up to date. We are not writers, but if you
               would like to read our stories please go ahead and subscribe.
-              Hopefully it won't be too long before the site is up and running!{" "}
-              <br />
+              Hopefully it won{"'"}t be too long before the site is up and
+              running! <br />
               <br />
               Catch up soon, <br />
               Davide and Beatrice
