@@ -9,7 +9,8 @@ export function useNewsletterSubscribeRequest<T>() {
     setPending(true);
 
     try {
-      const res = await fetch("/api/newsletter", {
+      const url = `${process.env.baseUrl}/.netlify/functions/newsletter`;
+      const res = await fetch(url, {
         method: "POST",
         headers: {
           Accept: "application/json",

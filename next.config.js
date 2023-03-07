@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    baseUrl: process.env.BASE_URL || "http://localhost:8888",
+  },
   experimental: {
     appDir: true,
   },
