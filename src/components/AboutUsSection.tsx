@@ -28,6 +28,7 @@ export const AboutUsSection: React.FC = () => {
           alt="us taking a selfie in the jungle"
           placeholder="blur"
           fill
+          sizes="100vw"
           style={{ objectFit: "cover" }}
         />
       </div>

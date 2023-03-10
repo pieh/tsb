@@ -17,6 +17,7 @@ const Post: React.FC<IPost> = ({ title, intro, image, category, date }) => {
     <div className="flex flex-col w-full">
       <div className="flex w-full aspect-square relative">
         <Image
+          sizes="100vw"
           fill
           src={image}
           alt="man doing something"
