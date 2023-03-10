@@ -1,10 +1,12 @@
 import { Hero } from "components/Hero";
-import { ThreePostsSection } from "components/ThreePostsSection";
+import FeaturedPostsSection from "components/FeaturedPostsSection/FeaturedPostsSection";
 import { SmallNotes } from "components/SmallNotes";
 import { CategoriesSection } from "components/CategoriesSection";
 import { AboutUsSection } from "components/AboutUsSection";
 import { AllBlogPosts } from "components/AllBlogPosts";
 import { Footer } from "components/Footer";
+import { Suspense } from "react";
+import { FeaturedPostsSectionSkeleton } from "components/FeaturedPostsSection/FeaturedPostsSectionSkeleton";
 
 const POSTS = [
   {
@@ -38,7 +40,10 @@ export default function Home() {
     <div className="flex flex-col">
       <Hero />
 
-      <ThreePostsSection title="Our recent thoughts" posts={POSTS} />
+      <Suspense fallback={<FeaturedPostsSectionSkeleton />}>
+        {/* @ts-expect-error Server Component */}
+        <FeaturedPostsSection />
+      </Suspense>
 
       <SmallNotes />
 

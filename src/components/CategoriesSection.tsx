@@ -1,6 +1,6 @@
 import format from "date-fns/format";
 import Image from "next/image";
-import { SectionWithTitle } from "./SectionWithTitle";
+import { SectionWithTitle } from "./SectionWIthTitle/SectionWithTitle";
 import { poppins } from "utils/fonts";
 
 interface ICategory {

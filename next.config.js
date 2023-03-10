@@ -7,7 +7,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["assets.example.com", "picsum.photos"],
+    domains: ["assets.example.com", "picsum.photos", "images.ctfassets.net"],
   },
 };
 

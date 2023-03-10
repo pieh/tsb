@@ -1,4 +1,4 @@
-import { SectionWithTitle } from "./SectionWithTitle";
+import { SectionWithTitle } from "./SectionWIthTitle/SectionWithTitle";
 
 interface IPost {
   title: string;
