@@ -22,13 +22,13 @@ export const AboutUsSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-1/4 h-full relative bg-[red]">
+      <div className="w-1/4 h-full relative">
         <Image
           src={aboutUsPic}
           alt="us taking a selfie in the jungle"
           placeholder="blur"
           fill
-          sizes="100vw"
+          sizes="100%"
           style={{ objectFit: "cover" }}
         />
       </div>

@@ -14,7 +14,7 @@ const Navbar = () => {
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
-          sizes="100vw"
+          sizes="100%"
           fill
           style={{ objectFit: "contain" }}
         />
@@ -68,6 +68,7 @@ export const Hero = () => {
         alt="Picture of the author"
         placeholder="blur"
         sizes="100vw"
+        priority
         fill
         style={{ objectFit: "cover" }}
       />

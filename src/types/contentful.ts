@@ -1,4 +1,5 @@
 import { Asset } from "contentful";
+import { Document } from "@contentful/rich-text-types";
 
 export interface ContentfulPostFields {
   title: string;
@@ -7,5 +8,7 @@ export interface ContentfulPostFields {
   thumbnailImage: Asset;
   mainImage: Asset;
   category: string;
+  richtext: Document;
   date: Date;
+  nextPost: { fields: Omit<ContentfulPostFields, "nextPost"> };
 }

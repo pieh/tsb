@@ -1,4 +1,3 @@
-import { poppins } from "utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +19,7 @@ export const Footer: React.FC = () => {
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
-          sizes="100vw"
+          sizes="100%"
           fill
           style={{ objectFit: "contain" }}
         />

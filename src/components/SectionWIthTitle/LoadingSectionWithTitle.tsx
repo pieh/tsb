@@ -14,7 +14,7 @@ export const LoadingSectionWithTitle: React.FC<
       }`}
     >
       {/* @TODO Use different color for greyBackgrund */}
-      <div className="w-2/3 my-4 animate-pulse bg-gray-300 h-10 bg-[red] pulse" />
+      <div className="w-2/3 my-4 animate-pulse bg-gray-300 h-10 pulse" />
 
       <div className="border-b-4 rounded-full border-amber-400 w-24 mb-16" />
 

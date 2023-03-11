@@ -1,3 +1,5 @@
+import { Document } from "@contentful/rich-text-types";
+
 export interface Image {
   url: string;
 }
@@ -9,5 +11,6 @@ export interface Post {
   thumbnailImage?: Image;
   mainImage: Image;
   category: string;
+  richtext: Document;
   date: Date;
 }

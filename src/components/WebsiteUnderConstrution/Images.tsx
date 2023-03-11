@@ -8,7 +8,7 @@ export const Images = () => {
         <Image
           src={overlayImage}
           alt="collage of 2 images, one is davide, the other is the tip of a floating boat"
-          sizes="100vw"
+          sizes="100%"
           fill
           style={{ objectFit: "contain" }}
         />

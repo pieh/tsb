@@ -13,7 +13,7 @@ export const WebsiteUnderConstruction = () => {
               src={logoPic}
               alt="the scrapbooker logo"
               fill
-              sizes="100vw"
+              sizes="100%"
               unoptimized
               style={{ objectFit: "cover" }}
             />
