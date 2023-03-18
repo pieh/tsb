@@ -9,8 +9,8 @@ import logoPic from "../../public/images/logo-white.png";
 
 const Navbar = () => {
   return (
-    <div className="h-24 flex items-center mb-28">
-      <Link className="relative h-20 w-56" href="/" target="_blank">
+    <div className="h-40 xl:h-24 flex items-center mb-4 lg:mb-20 xl:mb-28">
+      <Link className="relative w-full lg:w-72 xl:w-56 h-32 xl:h-20" href="/" target="_blank">
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
@@ -46,10 +46,10 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
 
 export const Hero = () => {
   return (
-    <div className="w-full pb-40 relative bg-black text-white flex justify-center">
-      <div className="flex flex-col w-7/12 z-10">
+    <div className="w-full pb-20 lg:pb-40 relative bg-black text-white flex justify-center">
+      <div className="flex flex-col w-5/6 xl:w-7/12 z-10">
         <Navbar />
-        <h1 className="text-7xl leading-[5.5rem] font-bold w-3/4">
+        <h1 className="text-5xl lg:text-7xl leading-[3.5rem] lg:leading-[5.5rem] font-bold w-full lg:w-3/4">
           Our {"'"}old school{"'"} way of keeping you up to date on our
           whereabouts
         </h1>

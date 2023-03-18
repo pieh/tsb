@@ -16,6 +16,9 @@ function parseContentfulPostFields(fields: ContentfulPostFields): Post {
       ? extractImageDataFromContentfulAsset(fields.thumbnailImage)
       : undefined,
     mainImage: extractImageDataFromContentfulAsset(fields.mainImage),
+    author: {
+      name: fields.author.fields.name,
+    },
   };
 }
 
@@ -60,7 +63,7 @@ export async function GET(
       post: parseContentfulPostFields(post.fields),
       nextPost: post.fields.nextPost
         ? parseContentfulNextPostFields(post.fields.nextPost.fields)
-        : null,
+        : undefined,
     });
   } catch (error) {
     console.error(error);

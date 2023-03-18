@@ -13,11 +13,11 @@ import {
 } from "@contentful/rich-text-types";
 
 const Bold: React.FC<PropsWithChildren> = ({ children }) => (
-  <span className="w-[720px] mx-auto font-bold">{children}</span>
+  <span className="rich-text-copy font-bold">{children}</span>
 );
 
 const Text: React.FC<PropsWithChildren> = ({ children }) => (
-  <p className="w-[720px] mx-auto">{children}</p>
+  <p className="rich-text-copy">{children}</p>
 );
 
 const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
@@ -26,7 +26,7 @@ const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
 
   return (
     <Image
-      className="mx-auto my-16"
+      className="mx-auto my-8 lg:my-16 loading-background"
       src={imageUrl}
       alt={file.description || "image from the post"} // @TODO Check for descriptions
       height={file.details.image.height}

@@ -3,7 +3,6 @@ import FeaturedPostsSection from "components/FeaturedPostsSection/FeaturedPostsS
 import { SmallNotes } from "components/SmallNotes";
 import { CategoriesSection } from "components/CategoriesSection";
 import { AboutUsSection } from "components/AboutUsSection";
-import { AllBlogPosts } from "components/AllBlogPosts";
 import { Footer } from "components/Footer";
 import { Suspense } from "react";
 import { FeaturedPostsSectionSkeleton } from "components/FeaturedPostsSection/FeaturedPostsSectionSkeleton";
@@ -47,11 +46,9 @@ export default function Home() {
 
       <SmallNotes />
 
-      <CategoriesSection />
+      {/* <CategoriesSection /> */}
 
       <AboutUsSection />
-
-      <AllBlogPosts />
 
       <Footer />
     </div>

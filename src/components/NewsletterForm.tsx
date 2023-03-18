@@ -23,11 +23,11 @@ export const NewsletterForm: React.FC = ({}) => {
 
   return (
     <form
-      className={`flex h-16 ${poppins.className}`}
+      className={`flex flex-col w-full lg:w-auto mt-8 lg:mt-0 lg:flex-row lg:justify-end lg:h-16 ${poppins.className}`}
       onSubmit={handleSubmit(onSubscribe)}
     >
       <input
-        className="h-full px-6 w-72"
+        className="h-16 lg:h-full px-6 w-full lg:w-72 mb-4 lg:mb-0"
         type="email"
         placeholder="Enter Email"
         {...register("email", {
@@ -41,7 +41,7 @@ export const NewsletterForm: React.FC = ({}) => {
 
       <button
         type="submit"
-        className="h-full bg-black text-white px-12 ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="h-16 lg:h-full w-full lg:w-72 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={!isValid || !isDirty}
       >
         Subscribe Now

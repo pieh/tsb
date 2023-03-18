@@ -1,5 +1,9 @@
 import { Document } from "@contentful/rich-text-types";
 
+export interface Author {
+  name: string;
+}
+
 export interface Image {
   url: string;
 }
@@ -13,4 +17,5 @@ export interface Post {
   category: string;
   richtext: Document;
   date: Date;
+  author: Author;
 }

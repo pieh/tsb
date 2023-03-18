@@ -18,7 +18,7 @@ export default async function FeaturedPostsSection() {
 
   return (
     <SectionWithTitle title="Our recent thoughts">
-      <div className="flex gap-x-16">
+      <div className="flex flex-col lg:flex-row gap-y-16 lg:gap-x-16">
         {posts.map((post, i) => (
           <Post key={i} {...post} />
         ))}
