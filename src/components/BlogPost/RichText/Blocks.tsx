@@ -1,21 +1,30 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, Children } from "react";
 import Image from "next/image";
 import { Block, Inline } from "@contentful/rich-text-types";
+import parse from "html-react-parser";
 
 export const Bold: React.FC<PropsWithChildren> = ({ children }) => (
-  <span className="rich-text-copy font-bold">{children}</span>
+  <span className="font-bold">{children}</span>
 );
 
-export const Text: React.FC<PropsWithChildren> = ({ children }) => (
-  <p className="rich-text-copy mb-6">{children}</p>
-);
+export const Text: React.FC<PropsWithChildren> = ({ children }) => {
+  const childrenArray = Children.toArray(children);
+
+  if (childrenArray.length === 1 && childrenArray[0] === "") {
+    return null;
+  }
+
+  return <p className="rich-text-copy mb-6">{children}</p>;
+};
 
 export const OrderedList: React.FC<PropsWithChildren> = ({ children }) => (
-  <ol className="rich-text-copy list-decimal !pl-6">{children}</ol>
+  <div className="rich-text-copy">
+    <ol className="list-decimal ml-6">{children}</ol>
+  </div>
 );
 
 export const ListItem: React.FC<PropsWithChildren> = ({ children }) => (
-  <li className="">{children}</li>
+  <li className="mb-2">{children}</li>
 );
 
 interface HyperlinkProps {
@@ -61,25 +70,33 @@ export const Heading: React.FC<PropsWithChildren<HeadingProps>> = ({
 export const Asset: React.FC<{ block: Block | Inline }> = ({ block }) => {
   const file = block.data.target.fields.file;
   const url = `https:${file.url}`;
+  const description = block.data.target.fields.description;
 
   if (file.contentType.startsWith("video/")) {
     return (
       <div className="mx-auto my-8 lg:my-16 loading-background w-full lg:w-[840px] aspect-video">
         <video controls>
           <source src={url} type="video/mp4" />
-          Sorry, your browser doesn't support videos.
+          Sorry, your browser doesn{"'"}t support videos.
         </video>
       </div>
     );
   }
 
   return (
-    <Image
-      className="mx-auto my-8 lg:my-16 loading-background"
-      src={url}
-      alt={file.description || "image from the post"} // @TODO Check for descriptions
-      height={file.details.image.height}
-      width={file.details.image.width}
-    />
+    <div className="mx-auto my-8 lg:my-16">
+      <Image
+        className="loading-background"
+        src={url}
+        alt={
+          description?.replace(/<\/?[^>]+(>|$)/g, "") || "image from the post"
+        } // @TODO Check for descriptions
+        height={file.details.image.height}
+        width={file.details.image.width}
+      />
+      <span className="mt-2 mx-4 text-gray-600 text-sm italic">
+        {parse(description)}
+      </span>
+    </div>
   );
 };

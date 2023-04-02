@@ -6,6 +6,7 @@ export interface Author {
 
 export interface Image {
   url: string;
+  description: string;
 }
 
 export interface Post {

@@ -3,7 +3,6 @@ import {
   Options,
 } from "@contentful/rich-text-react-renderer";
 import { INLINES, BLOCKS, MARKS, Document } from "@contentful/rich-text-types";
-
 import {
   Asset,
   Bold,
@@ -48,8 +47,21 @@ const options: Options = {
     [BLOCKS.OL_LIST]: (_, children: any) => {
       return <OrderedList>{children}</OrderedList>;
     },
-    [BLOCKS.LIST_ITEM]: (_, children: any) => {
-      return <ListItem>{children}</ListItem>;
+    [BLOCKS.LIST_ITEM]: (node) => {
+      const UnTaggedChildren = documentToReactComponents(
+        node as unknown as any,
+        {
+          renderNode: {
+            [BLOCKS.PARAGRAPH]: (_, children) => children,
+            [BLOCKS.LIST_ITEM]: (_, children) => children,
+            [INLINES.HYPERLINK]: ({ data }, children) => (
+              <Hyperlink href={data.uri}>{children}</Hyperlink>
+            ),
+          },
+        }
+      );
+
+      return <ListItem>{UnTaggedChildren}</ListItem>;
     },
   },
 };

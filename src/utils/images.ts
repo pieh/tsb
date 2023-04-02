@@ -6,5 +6,6 @@ export function extractImageDataFromContentfulAsset(
 ): Image {
   return {
     url: `https:${contentfulAsset.fields.file.url}`,
+    description: contentfulAsset.fields.description,
   };
 }

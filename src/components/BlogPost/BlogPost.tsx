@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { poppins } from "utils/fonts";
 import { Post } from "types/global";
+import parse from "html-react-parser";
 import { RichText } from "./RichText/RichText";
 
 interface GetPostResponse {
@@ -12,7 +13,8 @@ interface GetPostResponse {
 
 async function getPost(slug: string): Promise<GetPostResponse> {
   const url = `${process.env.baseUrl}/post/api/${slug}`;
-  const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(url, { next: { revalidate: 86400 } }); // Re-validate every day in production
+  // const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -44,14 +46,20 @@ export default async function BlogPost({ slug }: BlogPostProps) {
         </h1>
       </div>
 
-      <div className="loading-background relative my-12 lg:my-24 w-full h-[450px] lg:h-[650px]">
-        <Image
-          sizes="100%"
-          fill
-          src={post.mainImage.url}
-          alt="main picutre" // @TODO ee if we can use description to make it more accessible
-          style={{ objectFit: "cover" }}
-        />
+      <div className="flex flex-col my-12 lg:my-24">
+        <div className="loading-background relative w-full h-[450px] lg:h-[650px]">
+          <Image
+            className="loading-background"
+            sizes="100%"
+            fill
+            src={post.mainImage.url}
+            alt="main picutre" // @TODO ee if we can use description to make it more accessible
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+        <span className="text-xs italic mt-1 mx-4 text-gray-600">
+          {parse(post.mainImage.description)}
+        </span>
       </div>
 
       <RichText richtext={post.richtext} />
