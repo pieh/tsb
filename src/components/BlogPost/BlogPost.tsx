@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { poppins } from "utils/fonts";
 import { Post } from "types/global";
-import { RichText } from "./RichText";
+import { RichText } from "./RichText/RichText";
 
 interface GetPostResponse {
   post: Post;
@@ -12,7 +12,7 @@ interface GetPostResponse {
 
 async function getPost(slug: string): Promise<GetPostResponse> {
   const url = `${process.env.baseUrl}/post/api/${slug}`;
-  const res = await fetch(url);
+  const res = await fetch(url, { next: { revalidate: 0 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -39,12 +39,12 @@ export default async function BlogPost({ slug }: BlogPostProps) {
           <span>{format(new Date(post.date), "MMMM dd, yyyy")}</span>
         </div>
 
-        <h1 className="my-8 lg:my-16 text-6xl font-semibold text-center text-black">
+        <h1 className="lg:w-4/5 xl:w-3/5 my-8 lg:my-16 text-6xl font-semibold text-center text-black">
           {post.title}
         </h1>
       </div>
 
-      <div className="loading-background relative my-12 lg:my-24 w-full h-[450px] lg:h-96">
+      <div className="loading-background relative my-12 lg:my-24 w-full h-[450px] lg:h-[650px]">
         <Image
           sizes="100%"
           fill

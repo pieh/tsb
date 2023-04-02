@@ -6,6 +6,10 @@
   @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0;
 }
 
+.rich-text-heading {
+  @apply w-full lg:w-[720px] lg:mx-auto px-6 lg:px-0 font-bold mb-1;
+}
+
 .loading-background {
   @appky bg-gray-300 animate-pulse;
 }
