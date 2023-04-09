@@ -42,7 +42,7 @@ export default async function BlogPost({ slug }: BlogPostProps) {
           <span>{format(new Date(post.date), "MMMM dd, yyyy")}</span>
         </div>
 
-        <h1 className="lg:w-4/5 xl:w-3/5 my-8 lg:my-16 text-6xl font-semibold text-center text-black">
+        <h1 className="lg:w-4/5 xl:w-3/5 my-8 lg:my-16 text-6xl font-semibold text-center">
           {post.title}
         </h1>
       </div>

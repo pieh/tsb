@@ -42,7 +42,7 @@ export const NewsletterForm: React.FC = ({}) => {
 
       <button
         type="submit"
-        className="h-16 lg:h-full w-full lg:w-72 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="h-16 lg:h-full w-full lg:w-56 bg-black text-white px-12 lg:ml-4 disabled:opacity-50 disabled:cursor-not-allowed"
         disabled={!isValid || !isDirty}
       >
         Subscribe Now

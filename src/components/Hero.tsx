@@ -37,6 +37,7 @@ const CircularLink: React.FC<PropsWithChildren<CircularButtonLinkProps>> = ({
     <Link
       href={href}
       target="_blank"
+      rel="noopener noreferrer"
       className={`flex items-center justify-center rounded-full bg-white h-10 w-10 ${className}`}
     >
       {children}
@@ -58,7 +59,7 @@ export const Hero = () => {
             <TwitterIcon className="text-black fill-black h-5" />
           </CircularLink>
 
-          <CircularLink href="https://www.instagram.com/the_scrapbookers/?next=%2F&hl=en">
+          <CircularLink href="https://www.instagram.com/the_scrapbookers?igshid=OTjhZDVkZWE=">
             <InstagramIcon className="text-black fill-black h-5" />
           </CircularLink>
         </div>

@@ -27,13 +27,13 @@ export const Post: React.FC<IPost> = ({
           style={{ objectFit: "cover" }}
         />
       </Link>
-      <div className="flex items-center mt-4 text-gray-400 uppercase tracking-widest" style={poppins.style}>
+      <div className="flex items-center mt-6 uppercase tracking-widest text-xs text-gray-400 " style={poppins.style}>
         <span>{category}</span>
         <div className="border-r-2 h-2 mx-2" />
         <span>{format(new Date(date), "MMMM dd, yyyy")}</span>
       </div>
       <Link href={href}>
-        <h3 className="text-3xl mt-4 text-black">{title}</h3>
+        <h3 className="text-3xl mt-4 text-black font-medium">{title}</h3>
       </Link>
       <span className="text-xl mt-4 text-gray-500">{smallIntro}</span>
     </div>
