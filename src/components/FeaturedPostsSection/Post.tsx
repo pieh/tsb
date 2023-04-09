@@ -2,6 +2,7 @@ import format from "date-fns/format";
 import Image from "next/image";
 import Link from "next/link";
 import type { Post as IPost } from "types/global";
+import { poppins } from "utils/fonts";
 
 const DEFAULT_IMAGE = ""; // @TODO Ask Bea to do a nice default image
 
@@ -26,7 +27,7 @@ export const Post: React.FC<IPost> = ({
           style={{ objectFit: "cover" }}
         />
       </Link>
-      <div className="flex items-center mt-4 text-gray-400 uppercase tracking-widest">
+      <div className="flex items-center mt-4 text-gray-400 uppercase tracking-widest" style={poppins.style}>
         <span>{category}</span>
         <div className="border-r-2 h-2 mx-2" />
         <span>{format(new Date(date), "MMMM dd, yyyy")}</span>

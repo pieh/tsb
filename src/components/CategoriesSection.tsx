@@ -14,7 +14,8 @@ const Category: React.FC<ICategory> = ({ name }) => {
   return (
     <div className="flex w-full bg-[green] items-center py-5 px-8">
       <div
-        className={`flex items-center py-5 px-8 bg-white text-lg font-semibold min-w-32 ${poppins.className}`}
+        style={poppins.style}
+        className="flex items-center py-5 px-8 bg-white text-lg font-semibold min-w-32"
       >
         {name}
       </div>

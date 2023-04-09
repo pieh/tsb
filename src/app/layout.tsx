@@ -8,15 +8,17 @@ export const metadata = {
 };
 
 const WEBSITE_IS_ACTIVE = process.env.WEBSITE_IS_ACTIVE === "true" || false;
-
+console.log(crimsonPro.className, crimsonPro.style);
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={crimsonPro.className}>
-      <body className={!WEBSITE_IS_ACTIVE ? "bg-orange-100" : ''}>{WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}</body>
+    <html lang="en" style={crimsonPro.style}>
+      <body className={!WEBSITE_IS_ACTIVE ? "bg-orange-100" : ""}>
+        {WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}
+      </body>
     </html>
   );
 }

@@ -14,7 +14,7 @@ export const SectionWithTitle: React.FC<
         greyBackground ? "bg-gray-100" : "bg-white"
       }`}
     >
-      <h1 className="text-5xl lg:text-6xl bold mb-4">{title}</h1>
+      <h1 className="text-5xl lg:text-6xl font-bold mb-4">{title}</h1>
 
       <div className="border-b-4 rounded-full border-amber-400 w-24 mb-16" />
 

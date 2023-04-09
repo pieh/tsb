@@ -34,7 +34,8 @@ export default async function BlogPost({ slug }: BlogPostProps) {
     <div className="flex flex-col py-8 lg:py-12">
       <div className="flex flex-col items-center">
         <div
-          className={`py-2 px-4 flex items-center mt-4 bg-gray-100 text-gray-400 uppercase tracking-wider font-600 rounded-full ${poppins.className}`}
+          style={poppins.style}
+          className="py-2 px-4 flex items-center mt-4 bg-gray-100 text-gray-400 uppercase tracking-wider font-600 rounded-full"
         >
           <span>{post.category}</span>
           <div className="border-r-2 h-2 mx-2 border-gray-400" />

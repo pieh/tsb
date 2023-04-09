@@ -64,7 +64,8 @@ export const NewsletterForm: React.FC = ({}) => {
 
   return (
     <form
-      className={`flex flex-col xl:flex-row gap-6 xl:gap-4 ${poppins.className}`}
+      style={poppins.style}
+      className="flex flex-col xl:flex-row gap-6 xl:gap-4"
       onSubmit={handleSubmit(onSubscribe)}
     >
       <input

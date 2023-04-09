@@ -23,7 +23,8 @@ export const NewsletterForm: React.FC = ({}) => {
 
   return (
     <form
-      className={`flex flex-col w-full lg:w-auto mt-8 lg:mt-0 lg:flex-row lg:justify-end lg:h-16 ${poppins.className}`}
+      style={poppins.style}
+      className="flex flex-col w-full lg:w-auto mt-8 lg:mt-0 lg:flex-row lg:justify-end lg:h-16"
       onSubmit={handleSubmit(onSubscribe)}
     >
       <input

@@ -9,7 +9,8 @@ export const AboutUsSection: React.FC = () => {
       <div className="bg-gray-100 flex flex-col items-end w-full lg:w-7/12 xl:w-2/3 py-8 px-6 lg:p-12 xl:p-24">
         <div>
           <h6
-            className={`mb-4 xl:mb-16 uppercase font-semibold text-gray-600 text-sm tracking-widest ${poppins.className}`}
+            style={poppins.style}
+            className="mb-4 xl:mb-16 uppercase font-semibold text-gray-600 text-sm tracking-widest"
           >
             About us
           </h6>
