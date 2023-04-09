@@ -10,6 +10,7 @@ function parseContentfulPostFields(fields: ContentfulPostFields): Post {
     slug: fields.slug,
     smallIntro: fields.smallIntro,
     date: fields.date,
+    keywords: fields.keywords,
     category: fields.category,
     richtext: fields.richtext,
     thumbnailImage: fields.thumbnailImage

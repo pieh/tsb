@@ -11,7 +11,7 @@ interface GetPostResponse {
   nextPost: Pick<Post, "title" | "slug" | "date" | "mainImage" | "smallIntro">;
 }
 
-async function getPost(slug: string): Promise<GetPostResponse> {
+export async function getPost(slug: string): Promise<GetPostResponse> {
   const url = `${process.env.baseUrl}/post/api/${slug}`;
   const res = await fetch(url, { next: { revalidate: 86400 } }); // Re-validate every day in production
   // const res = await fetch(url, { next: { revalidate: 0 } });

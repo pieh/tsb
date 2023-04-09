@@ -1,8 +1,7 @@
-import { Navbar } from "components/Navbar";
-import BlogPost from "components/BlogPost/BlogPost";
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { BlogPostSkeleton } from "components/BlogPost/BlogPostSkeleton";
-import { Footer } from "components/Footer";
+import BlogPost, { getPost } from "components/BlogPost/BlogPost";
 
 interface PostpageProps {
   params: {
@@ -10,17 +9,39 @@ interface PostpageProps {
   };
 }
 
+export async function generateMetadata({
+  params: { slug },
+}: PostpageProps): Promise<Metadata> {
+  const { post } = await getPost(slug);
+
+  return {
+    title: post.title,
+    description: post.smallIntro,
+    creator: post.author.name,
+    keywords: post.keywords,
+    openGraph: {
+      title: post.title,
+      description: post.smallIntro,
+      siteName: "The Scrapbookers",
+      images: [
+        {
+          url: post.mainImage.url,
+          height: post.mainImage.details.height || 450,
+          width: post.mainImage.details.width || 800,
+        },
+      ],
+      locale: "en-GB",
+    },
+  };
+}
+
 export default function Post({ params: { slug } }: PostpageProps) {
   return (
     <div>
-      <Navbar />
-
       <Suspense fallback={<BlogPostSkeleton />}>
         {/* @ts-expect-error Server Component */}
         <BlogPost slug={slug} />
       </Suspense>
-
-      <Footer />
     </div>
   );
 }

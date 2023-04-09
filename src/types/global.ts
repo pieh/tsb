@@ -7,11 +7,16 @@ export interface Author {
 export interface Image {
   url: string;
   description: string;
+  details: {
+    height?: number;
+    width?: number;
+  };
 }
 
 export interface Post {
   title: string;
   slug: string;
+  keywords: string[];
   smallIntro: string;
   thumbnailImage?: Image;
   mainImage: Image;

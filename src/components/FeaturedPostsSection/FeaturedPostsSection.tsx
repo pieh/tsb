@@ -4,7 +4,7 @@ import { Post } from "./Post";
 
 async function getFeaturedPosts(): Promise<{ posts: IPost[] }> {
   const url = `${process.env.baseUrl}/post/api?tag=featured`;
-  const res = await fetch(url, { next: { revalidate: 0 } });
+  const res = await fetch(url, { next: { revalidate: 86400 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");

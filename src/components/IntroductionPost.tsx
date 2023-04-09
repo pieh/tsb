@@ -1,5 +1,3 @@
-import { poppins } from "utils/fonts";
-
 export default function IntroductionPost() {
   return (
     <div className="flex flex-col py-6 lg:py-8">
@@ -93,9 +91,9 @@ export default function IntroductionPost() {
       <div className="rich-text-copy flex flex-col gap-y-6 text-2xl">
         <p>
           So far, our journey has been a great experience, one that we{"'"}ll
-          remember for the rest of our lives, and we{"'"}ve only just begun. It{"'"}s
-          the details and subtleties which surprise us and are making us fall in
-          love with all these new cultures.
+          remember for the rest of our lives, and we{"'"}ve only just begun. It
+          {"'"}s the details and subtleties which surprise us and are making us
+          fall in love with all these new cultures.
         </p>
         <p>
           Thank you for visiting our blog, where we share our stories, with a

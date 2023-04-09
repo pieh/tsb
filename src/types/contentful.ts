@@ -10,6 +10,7 @@ export interface CotentfulAuthor {
 export interface ContentfulPostFields {
   title: string;
   slug: string;
+  keywords: string[];
   smallIntro: string;
   thumbnailImage: Asset;
   mainImage: Asset;
