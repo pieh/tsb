@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { WebsiteUnderConstruction } from "components/WebsiteUnderConstrution/WebsiteUnderConstruction";
 import { crimsonPro } from "utils/fonts";
 import "./globals.css";
@@ -8,7 +9,7 @@ export const metadata = {
 };
 
 const WEBSITE_IS_ACTIVE = process.env.WEBSITE_IS_ACTIVE === "true" || false;
-console.log(crimsonPro.className, crimsonPro.style);
+
 export default function RootLayout({
   children,
 }: {
@@ -19,6 +20,25 @@ export default function RootLayout({
       <body className={!WEBSITE_IS_ACTIVE ? "bg-orange-100" : ""}>
         {WEBSITE_IS_ACTIVE ? children : <WebsiteUnderConstruction />}
       </body>
+
+      {process.env.environment === "production" && (
+        <>
+          <Script
+            async
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.googleAnalyticsId}`}
+          />
+          <Script id="ga-script" strategy="afterInteractive">
+            {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                
+                gtag('config', '${process.env.googleAnalyticsId}');
+                `}
+          </Script>
+        </>
+      )}
     </html>
   );
 }
