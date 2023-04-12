@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { TwitterIcon } from "icons/Twitter";
 import { InstagramIcon } from "icons/Instagram";
+import { URLS } from "utils/urls";
 
 import homeHeroPic from "../../public/images/home-hero.jpg";
 import logoPic from "../../public/images/logo-white.png";
@@ -10,7 +11,11 @@ import logoPic from "../../public/images/logo-white.png";
 const Navbar = () => {
   return (
     <div className="h-40 xl:h-24 flex items-center mb-4 lg:mb-20 xl:mb-28">
-      <Link className="relative w-full lg:w-72 xl:w-56 h-32 xl:h-20" href="/" target="_blank">
+      <Link
+        className="relative w-full lg:w-72 xl:w-56 h-32 xl:h-20"
+        href="/"
+        target="_blank"
+      >
         <Image
           src={logoPic}
           alt="the scrapbooker logo"
@@ -55,11 +60,11 @@ export const Hero = () => {
           whereabouts
         </h1>
         <div className="flex mt-4">
-          <CircularLink href="https://twitter.com/webflow" className="mr-3">
+          <CircularLink href={URLS.twitterURL()} className="mr-3">
             <TwitterIcon className="text-black fill-black h-5" />
           </CircularLink>
 
-          <CircularLink href="https://www.instagram.com/the_scrapbookers?igshid=OTjhZDVkZWE=">
+          <CircularLink href={URLS.instagramURL()}>
             <InstagramIcon className="text-black fill-black h-5" />
           </CircularLink>
         </div>
