@@ -9,6 +9,7 @@ import {
   Text,
   Heading,
   OrderedList,
+  UnorderedList,
   Hyperlink,
   ListItem,
 } from "./Blocks";
@@ -44,9 +45,12 @@ const options: Options = {
     [BLOCKS.HEADING_6]: (_, children: any) => (
       <Heading size={6}>{children}</Heading>
     ),
-    [BLOCKS.OL_LIST]: (_, children: any) => {
-      return <OrderedList>{children}</OrderedList>;
-    },
+    [BLOCKS.OL_LIST]: (_, children: any) => (
+      <OrderedList>{children}</OrderedList>
+    ),
+    [BLOCKS.UL_LIST]: (_, children: any) => (
+      <UnorderedList>{children}</UnorderedList>
+    ),
     [BLOCKS.LIST_ITEM]: (node) => {
       const UnTaggedChildren = documentToReactComponents(
         node as unknown as any,
