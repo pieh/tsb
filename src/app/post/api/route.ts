@@ -26,8 +26,9 @@ export async function GET(request: Request) {
   try {
     const client = createClient({
       space: process.env.CONTENTFUL_SPACE_ID as string,
-      environment: "master",
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+      accessToken: (process.env.IS_PREVIEW === "true"
+        ? process.env.CONTENTFUL_PREVIEW_TOKEN
+        : process.env.CONTENTFUL_DELIVERY_TOKEN) as string,
     });
 
     const { searchParams } = new URL(request.url);
