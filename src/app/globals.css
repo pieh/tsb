@@ -15,7 +15,7 @@ html {
 }
 
 .loading-background {
-  @apply bg-gray-300 animate-pulse;
+  @apply bg-gray-300;
 }
 
 .introduction-letter {

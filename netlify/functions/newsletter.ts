@@ -1,7 +1,5 @@
 import { Handler, HandlerEvent } from "@netlify/functions";
-import mailchimp, {
-  type MemberErrorResponse,
-} from "@mailchimp/mailchimp_marketing";
+import mailchimp, { type ErrorResponse } from "@mailchimp/mailchimp_marketing";
 import { jsonResponse } from "../shared/utils";
 import { HTTP_METHODS } from "../shared/variables";
 
@@ -10,7 +8,7 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER as string,
 });
 
-function isMemberErrorResponse(error: any): error is MemberErrorResponse {
+function isMemberErrorResponse(error: any): error is ErrorResponse {
   return !!(error as any).status;
 }
 

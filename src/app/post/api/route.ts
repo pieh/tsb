@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { createClient } from "contentful";
 import type { Post } from "types/global";
 import type { ContentfulPostFields } from "types/contentful";
 import { extractImageDataFromContentfulAsset } from "utils/images";
+import { getContentfulClient } from "utils/contentful-client";
 
 function parseContentfulPostFields(
   fields: ContentfulPostFields
@@ -24,12 +24,7 @@ function parseContentfulPostFields(
 
 export async function GET(request: Request) {
   try {
-    const client = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID as string,
-      accessToken: (process.env.IS_PREVIEW === "true"
-        ? process.env.CONTENTFUL_PREVIEW_TOKEN
-        : process.env.CONTENTFUL_DELIVERY_TOKEN) as string,
-    });
+    const client = getContentfulClient();
 
     const { searchParams } = new URL(request.url);
     const tag = searchParams.get("tag");
