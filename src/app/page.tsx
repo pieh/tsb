@@ -1,10 +1,13 @@
 import { Hero } from "components/Hero";
-import FeaturedPostsSection from "components/FeaturedPostsSection/FeaturedPostsSection";
-import { SmallNotes } from "components/SmallNotes";
+import FeaturedPostsSection, {
+  FeaturedPostsSectionSkeleton,
+} from "components/FeaturedPostsSection/FeaturedPostsSection";
+import SmallNotesSection, {
+  SmallNotesSectionSkeleton,
+} from "components/SmallNotesSection/SmallNotesSection";
 import { AboutUsSection } from "components/AboutUsSection";
 import { Footer } from "components/Footer";
 import { Suspense } from "react";
-import { FeaturedPostsSectionSkeleton } from "components/FeaturedPostsSection/FeaturedPostsSectionSkeleton";
 
 export const metadata = {
   title: "Home | The Scrapbookers",
@@ -20,7 +23,10 @@ export default function Home() {
         <FeaturedPostsSection />
       </Suspense>
 
-      <SmallNotes />
+      <Suspense fallback={<SmallNotesSectionSkeleton />}>
+        {/* @ts-expect-error Server Component */}
+        <SmallNotesSection />
+      </Suspense>
 
       {/* <CategoriesSection /> */}
 

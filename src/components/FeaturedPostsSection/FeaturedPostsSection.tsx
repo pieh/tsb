@@ -1,6 +1,7 @@
 import type { Post as IPost } from "types/global";
 import { SectionWithTitle } from "../SectionWIthTitle/SectionWithTitle";
 import { Post } from "./Post";
+import { FeaturedPostsSectionSkeleton } from "./FeaturedPostsSectionSkeleton";
 
 async function getFeaturedPosts(): Promise<{ posts: IPost[] }> {
   const url = `${process.env.baseUrl}/post/api?tag=featured`;
@@ -26,3 +27,5 @@ export default async function FeaturedPostsSection() {
     </SectionWithTitle>
   );
 }
+
+export { FeaturedPostsSectionSkeleton };
