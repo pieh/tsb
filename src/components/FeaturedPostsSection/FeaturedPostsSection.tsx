@@ -15,6 +15,7 @@ async function getFeaturedPosts(): Promise<{ posts: IPost[] }> {
 }
 
 export default async function FeaturedPostsSection() {
+  return <div>wat2</div>;
   const { posts } = await getFeaturedPosts();
 
   return (

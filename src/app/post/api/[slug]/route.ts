@@ -43,6 +43,8 @@ export async function GET(
   { params }: { params: { slug: string } }
 ) {
   try {
+    return NextResponse.json({ post: null });
+
     const client = getContentfulClient();
 
     const result = await client.getEntries<ContentfulPostFields>({

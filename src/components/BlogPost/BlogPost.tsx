@@ -28,6 +28,7 @@ interface BlogPostProps {
 }
 
 export default async function BlogPost({ slug }: BlogPostProps) {
+  return <div>wat1</div>;
   const { post, nextPost } = await getPost(slug);
 
   return (

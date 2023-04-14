@@ -24,6 +24,8 @@ function parseContentfulPostFields(
 
 export async function GET(request: Request) {
   try {
+    return NextResponse.json({ post: null });
+
     const client = getContentfulClient();
 
     const { searchParams } = new URL(request.url);

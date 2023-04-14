@@ -16,6 +16,7 @@ async function getSmallNotes(): Promise<{ posts: IPost[] }> {
 }
 
 export default async function SmallNotesSection() {
+  return <div>wat3</div>;
   const { posts } = await getSmallNotes();
 
   return (
